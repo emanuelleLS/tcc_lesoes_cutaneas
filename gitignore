@@ -1,0 +1,24 @@
+# Ignorar arquivos temporários e cache
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Ignorar imagens da base e arquivos pesados
+ham10000/images/
+ham10000/teste100/
+results/
+results_lote/
+samples/
+
+# Ignorar saídas geradas
+*.png
+*.txt
+*.pdf
+
+# Permitir manter estrutura das pastas
+!ham10000/.gitkeep
+!results_teste100/.gitkeep
+
+# Manter exemplos e CSV de relatório
+!results_teste100/relatorio_lote.csv
