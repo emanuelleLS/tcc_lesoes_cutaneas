@@ -20,12 +20,14 @@ tcc_lesoes_cutaneas/
 ├── requirements.txt
 ├── results/
 ├── results_lote/
+├── results_teste100/
 ├── samples/
 └── ham10000/
     ├── metadata/
     │   └── HAM10000_metadata.csv
     └── images/   ← Imagens da base (não incluídas)
 ```
+A pasta `results_teste100/` guarda as saídas e relatórios de testes.
 
 ## 📥 Como obter a base de imagens
 
