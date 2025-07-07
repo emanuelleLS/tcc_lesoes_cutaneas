@@ -1,0 +1,18 @@
+RELATÓRIO DE ANÁLISE DE LESÃO CUTÂNEA
+==================================================
+CARACTERÍSTICAS:
+- area: 6215.00
+- perimeter: 604.76
+- circularity: 0.21
+- aspect_ratio: 0.39
+- solidity: 0.73
+
+CLASSIFICAÇÃO: PROVAVELMENTE BENIGNA
+
+OBSERVAÇÕES:
+Lesão com características benignas.
+
+PARAMETROS DE CLASSIFICACAO:
+- Circularidade < 0.4
+- Aspect Ratio > 0.5
+- Área > 10000
