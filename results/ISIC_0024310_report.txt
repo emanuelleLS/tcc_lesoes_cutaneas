@@ -1,0 +1,18 @@
+RELATÓRIO DE ANÁLISE DE LESÃO CUTÂNEA
+==================================================
+CARACTERÍSTICAS:
+- area: 3269.50
+- perimeter: 306.21
+- circularity: 0.44
+- aspect_ratio: 0.65
+- solidity: 0.81
+
+CLASSIFICAÇÃO: SUSPEITA
+
+OBSERVAÇÕES:
+Recomenda-se avaliação dermatológica.
+
+PARAMETROS DE CLASSIFICACAO:
+- Circularidade < 0.4
+- Aspect Ratio > 0.5
+- Área > 10000
