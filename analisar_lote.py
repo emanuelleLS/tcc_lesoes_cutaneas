@@ -9,9 +9,9 @@ import time
 # Definir os caminhos conforme a necessidade:
 # ✔️ Basta mudar esses dois caminhos para usar em qualquer lote
 
-# caminho_imgs = r"C:\Users\DettCloud2\Downloads\tcc\ham10000\images"  # Caminho das imagens
-caminho_imgs = r"C:\Users\DettCloud2\Downloads\tcc\ham10000\teste100" 
-saida = r"C:\Users\DettCloud2\Downloads\tcc\results_lote_0707_ml"             # Pasta de saída
+caminho_imgs = r"C:\Users\DettCloud2\Downloads\tcc\ham10000\images"  # Caminho das imagens
+# caminho_imgs = r"C:\Users\DettCloud2\Downloads\tcc\ham10000\teste100" 
+saida = r"C:\Users\DettCloud2\Downloads\tcc\results_lote_0707_ml_balanced"             # Pasta de saída
 # saida = r"C:\Users\DettCloud2\Downloads\tcc\results2406"   
 
 # Criar pasta de saída se não existir
