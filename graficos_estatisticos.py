@@ -110,6 +110,30 @@ def salvar_comparacao(df, output_folder):
     output_csv = os.path.join(output_folder, "comparacao.csv")
     df[['imagem', 'diagnostico_real', 'classificacao']].to_csv(output_csv, index=False)
     print(f"✅ CSV de comparação salvo em: {output_csv}")
+    
+def gerar_pairplot_morfologia(df, output_folder):
+    """Gerar gráfico de dispersão em pares (pairplot) dos atributos morfológicos"""
+    import seaborn as sns
+
+    features = ["area", "perimetro", "circularidade", "aspect_ratio", "solidez"]
+    df_plot = df[features + ["classificacao"]].copy()
+
+    sns.set(style="whitegrid", font_scale=1.1)
+    g = sns.pairplot(
+        df_plot,
+        hue="classificacao",
+        palette="Set1",
+        diag_kind="kde",
+        markers=["o", "s"],
+        plot_kws={'alpha': 0.6, 's': 35}
+    )
+
+    g.fig.suptitle("Gráfico de Dispersão dos Atributos Morfológicos", fontsize=16, y=1.03)
+    output_path = os.path.join(output_folder, "pairplot_morfologia.png")
+    plt.savefig(output_path, dpi=300, bbox_inches="tight")
+    plt.close()
+    print(f"✅ Pairplot salvo em: {output_path}")
+
 
 # ==================== Análise Estatística e Geração de Gráficos ====================
 
@@ -252,6 +276,6 @@ def main():
     gerar_relatorio_pdf(acc, prec, rec, f1, cm, output_folder)
     gerar_graficos(df, acc, prec, rec, f1, cm, output_folder)
     salvar_comparacao(df, output_folder)
-
+    gerar_pairplot_morfologia(df, output_folder)
 if __name__ == "__main__":
     main()
