@@ -4,13 +4,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 from skimage import measure
 from skimage.segmentation import watershed
-
+import joblib
+import pandas as pd
 
 class SkinLesionAnalyzer:
     def __init__(self, image_path, circularity_threshold=0.4, aspect_ratio_threshold=0.5, area_threshold=10000):
         """Inicializa o analisador com uma imagem específica e parâmetros ajustáveis"""
         os.makedirs('results', exist_ok=True)
         self.image_path = image_path
+        self.modelo_path = r"C:\Users\DettCloud2\Downloads\tcc\modelo_random_forest.pkl"
+        self.modelo = joblib.load(self.modelo_path)
+
         
         # Parâmetros de classificação
         self.circularity_threshold = circularity_threshold
@@ -109,12 +113,16 @@ class SkinLesionAnalyzer:
         }
 
     def classify_lesion(self, features):
-        """Classifica a lesão com base nas características"""
-        irregular = features['circularity'] < self.circularity_threshold
-        asymmetric = abs(features['aspect_ratio'] - 1.0) > self.aspect_ratio_threshold
-        large = features['area'] > self.area_threshold
+        """Classifica usando o modelo treinado, com nomes consistentes"""
+        entrada = pd.DataFrame([{
+            'area': features['area'],
+            'perimetro': features['perimeter'],
+            'circularidade': features['circularity'],
+            'aspect_ratio': features['aspect_ratio'],
+            'solidez': features['solidity'],
+        }])
+        return self.modelo.predict(entrada)[0]
 
-        return "SUSPEITA" if (irregular or asymmetric or large) else "PROVAVELMENTE BENIGNA"
 
     def generate_report(self, original, processed, mask, edges, features, classification):
         """Gera relatório visual e textual"""
