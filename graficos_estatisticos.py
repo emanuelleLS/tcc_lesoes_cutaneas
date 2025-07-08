@@ -13,9 +13,9 @@ from sklearn.metrics import (
 from matplotlib.backends.backend_pdf import PdfPages
 
 # ==================== Configurações ====================
-csv_resultados = r"C:\Users\DettCloud2\Downloads\tcc\results_lote_0707_ml\relatorio_lote.csv"
+csv_resultados = r"C:\Users\DettCloud2\Downloads\tcc\results_lote_0707_ml_balanced\relatorio_lote.csv"
 csv_metadata = r"C:\Users\DettCloud2\Downloads\tcc\ham10000\metadata\HAM10000_metadata.csv"
-output_folder = r"C:\Users\DettCloud2\Downloads\tcc\results_lote_0707_ml\graficos"
+output_folder = r"C:\Users\DettCloud2\Downloads\tcc\results_lote_0707_ml_balanced\graficos"
 
 os.makedirs(output_folder, exist_ok=True)
 
